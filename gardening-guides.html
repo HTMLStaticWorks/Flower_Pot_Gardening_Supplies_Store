@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Guides | GreenNest</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    
+    <style>
+        .guides-hero {
+            padding: 160px 0 80px;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .guide-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-smooth);
+            height: 100%;
+            border: 1px solid var(--color-border);
+        }
+        [data-theme="dark"] .guide-card { background: var(--color-card-bg); }
+        
+        .guide-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-forest-green);
+        }
+        
+        .guide-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+        .guide-card:hover .guide-img {
+            transform: scale(1.1);
+        }
+        
+        .guide-content {
+            padding: 30px;
+        }
+        
+        .guide-icon {
+            width: 50px; height: 50px;
+            background: var(--color-beige);
+            color: var(--color-forest-green);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .step-box {
+            background: var(--color-light-gray);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        [data-theme="dark"] .step-box { background: rgba(255,255,255,0.05); }
+        
+        .step-num {
+            width: 40px; height: 40px; min-width: 40px;
+            background: var(--color-terracotta);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Shared) -->
+    <header class="site-header scrolled">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-flower1"></i> GreenNest
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu glass-panel">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gardening-guides.html">Guides</a></li>
+                        <li class="nav-item"><a class="nav-link" href="bulk-orders.html">Bulk Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <button id="themeToggle" class="icon-btn theme-toggle" title="Toggle Dark/Light Mode">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                        <button id="rtlToggle" class="icon-btn" title="Toggle RTL">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                        
+                        <a href="signup.html" class="btn-premium btn-primary-custom ms-2">Signup</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Seasonal Planting (Hero-style) -->
+        <section class="guides-hero text-center text-lg-start">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <span class="category-badge position-relative d-inline-block mb-3" style="top:0; left:0;">Featured Guide</span>
+                        <h1 class="display-4 fw-bold mb-4" style="font-family: var(--font-secondary); color: var(--color-forest-green);">Seasonal Planting Calendar</h1>
+                        <p class="lead text-muted mb-4">Timing is everything in gardening. Learn exactly what to plant, prune, and harvest in Spring, Summer, Autumn, and Winter to ensure a thriving garden year-round.</p>
+                        <ul class="list-unstyled mb-5 text-muted">
+                            <li class="mb-2"><i class="bi bi-calendar-check text-terracotta me-2"></i> Month-by-month breakdowns</li>
+                            <li class="mb-2"><i class="bi bi-thermometer-sun text-terracotta me-2"></i> Climate zone adaptations</li>
+                            <li><i class="bi bi-flower3 text-terracotta me-2"></i> Indoor vs. Outdoor schedules</li>
+                        </ul>
+                        <button class="btn-premium btn-primary-custom px-5 py-3">Download PDF Calendar</button>
+                    </div>
+                    <div class="col-lg-6" data-aos="zoom-in">
+                        <div class="position-relative">
+                            <img loading="lazy" src="https://loremflickr.com/800/800/seasons,garden?lock=81" alt="Seasonal Planting" class="img-fluid rounded-4 shadow-lg border border-4 border-white">
+                            <!-- Decorative floating element -->
+                            <div class="glass-panel position-absolute p-3 d-flex align-items-center gap-3" style="bottom: 30px; left: -30px;">
+                                <div class="bg-terracotta text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--color-terracotta);"><i class="bi bi-cloud-sun fs-4"></i></div>
+                                <div>
+                                    <h6 class="m-0 fw-bold">Current Season: Spring</h6>
+                                    <small class="text-muted">Perfect for repotting</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Plant Care Tips (Grid) -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Essential Plant Care</h2>
+                    <p>Master the basics of keeping your leafy friends happy and healthy.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="guide-card">
+                            <div class="overflow-hidden"><img loading="lazy" src="https://loremflickr.com/600/400/sunlight,plant?lock=82" alt="Lighting" class="guide-img"></div>
+                            <div class="guide-content">
+                                <div class="guide-icon"><i class="bi bi-brightness-high"></i></div>
+                                <h4>Decoding Light Requirements</h4>
+                                <p class="text-muted mb-4">What does "bright indirect light" actually mean? We break down lighting terminology and how to map your home's natural light zones.</p>
+                                <a href="#" class="fw-bold text-forest-green">Read Guide <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="guide-card">
+                            <div class="overflow-hidden"><img loading="lazy" src="https://loremflickr.com/600/400/repotting?lock=83" alt="Repotting" class="guide-img"></div>
+                            <div class="guide-content">
+                                <div class="guide-icon"><i class="bi bi-box-seam"></i></div>
+                                <h4>When & How to Repot</h4>
+                                <p class="text-muted mb-4">Learn the telltale signs that your plant is root-bound, choosing the right pot size, and the step-by-step repotting process to minimize shock.</p>
+                                <a href="#" class="fw-bold text-forest-green">Read Guide <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="guide-card">
+                            <div class="overflow-hidden"><img loading="lazy" src="https://loremflickr.com/600/400/plant,pest?lock=84" alt="Pests" class="guide-img"></div>
+                            <div class="guide-content">
+                                <div class="guide-icon"><i class="bi bi-bug"></i></div>
+                                <h4>Pest Control 101</h4>
+                                <p class="text-muted mb-4">Identify common houseplant pests like fungus gnats, spider mites, and mealybugs, and learn organic ways to eradicate them.</p>
+                                <a href="#" class="fw-bold text-forest-green">Read Guide <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Watering Guide (List style) -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <img loading="lazy" src="https://loremflickr.com/800/800/watering,plants,indoor?lock=85" alt="Watering Guide" class="img-fluid rounded-4 shadow-sm w-100 h-100 object-fit-cover" style="min-height: 500px;">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h2 class="display-6 mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">The Ultimate Watering Guide</h2>
+                        <p class="lead text-muted mb-5">Overwatering is the #1 killer of houseplants. Master the art of hydration with these foolproof steps.</p>
+                        
+                        <div class="step-box">
+                            <div class="step-num">1</div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Check the Soil, Not a Schedule</h5>
+                                <p class="text-muted m-0">Always check moisture levels 2-3 inches deep before watering. If it's dry, water. If it's damp, wait.</p>
+                            </div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-num">2</div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Water Deeply</h5>
+                                <p class="text-muted m-0">Water thoroughly until it drains out the bottom holes. This encourages deep, healthy root systems.</p>
+                            </div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-num">3</div>
+                            <div>
+                                <h5 class="fw-bold mb-2">Empty the Drip Tray</h5>
+                                <p class="text-muted m-0">Never let your plant sit in standing water for more than 30 minutes to prevent root rot.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-premium btn-outline-custom mt-4">Explore Moisture Meters</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Fertilizer Guide -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <img loading="lazy" src="https://loremflickr.com/800/800/fertilizer,soil?lock=86" alt="Fertilizer Guide" class="img-fluid rounded-4 shadow-sm w-100 h-100 object-fit-cover" style="min-height: 500px;">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h2 class="display-6 mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">Fertilizing Demystified</h2>
+                        <p class="lead text-muted mb-4">Plants need food just like we do. Learn how to read N-P-K ratios and when to feed your collection.</p>
+                        
+                        <div class="table-responsive bg-white rounded-3 p-3 shadow-sm mb-4">
+                            <table class="table table-borderless m-0">
+                                <thead style="border-bottom: 2px solid var(--color-forest-green);">
+                                    <tr>
+                                        <th class="text-forest-green">Nutrient</th>
+                                        <th class="text-forest-green">Function</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">N (Nitrogen)</td>
+                                        <td class="text-muted">Promotes lush, green leafy growth.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">P (Phosphorus)</td>
+                                        <td class="text-muted">Encourages strong root development and blooming.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">K (Potassium)</td>
+                                        <td class="text-muted">Aids overall plant health and disease resistance.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted"><i class="bi bi-info-circle text-terracotta me-2"></i><strong>Pro Tip:</strong> Only fertilize during the active growing season (Spring/Summer). Dilute liquid fertilizers to half-strength for indoor plants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Beginner Gardening Guide (CTA Banner) -->
+        <section class="py-5">
+            <div class="container">
+                <div class="glass-panel p-5 text-center position-relative overflow-hidden" data-aos="zoom-in" style="background: linear-gradient(135deg, var(--color-olive), var(--color-forest-green)); border: none;">
+                    <!-- Background pattern overlay -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://loremflickr.com/1920/600/leaves,pattern?lock=87') center/cover; opacity: 0.1; z-index: 0;"></div>
+                    
+                    <div class="position-relative" style="z-index: 1;">
+                        <h2 class="display-5 fw-bold text-white mb-4" style="font-family: var(--font-secondary);">New to Gardening?</h2>
+                        <p class="lead text-white-50 mb-5 max-w-lg mx-auto" style="max-width: 700px;">Start your journey on the right foot. Download our comprehensive 50-page "Beginner's Blueprint to Urban Gardening" e-book completely free.</p>
+                        
+                        <form class="d-flex flex-column flex-md-row gap-3 justify-content-center mx-auto" style="max-width: 500px;">
+                            <input type="email" class="form-control form-control-lg border-0" placeholder="Enter your email" style="border-radius: 50px; padding-left: 25px;">
+                            <button type="submit" class="btn-premium bg-terracotta text-white border-0 px-4" style="background: var(--color-terracotta);">Get E-Book</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Shared) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand mb-4" href="index.html">
+                        <i class="bi bi-flower1"></i> GreenNest
+                    </a>
+                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern gardening essentials.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Product Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categories.html">Flower Pots</a></li>
+                        <li><a href="categories.html">Indoor Plants</a></li>
+                        <li><a href="categories.html">Gardening Tools</a></li>
+                        <li><a href="categories.html">Soil & Fertilizers</a></li>
+                        <li><a href="categories.html">Garden Decor</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="m-0">&copy; 2026 GreenNest Store. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

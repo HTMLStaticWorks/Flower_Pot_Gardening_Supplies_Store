@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | GreenNest</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    
+    <style>
+        .auth-body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(44, 94, 59, 0.7), rgba(44, 94, 59, 0.9)), url('https://loremflickr.com/1920/1080/greenhouse,indoor?lock=122') center/cover fixed;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .auth-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        [data-theme="dark"] .auth-card {
+            background: rgba(26, 31, 28, 0.85);
+            border-color: rgba(255,255,255,0.1);
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .auth-brand {
+            font-family: var(--font-secondary);
+            font-size: 2.2rem;
+            color: var(--color-forest-green);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        [data-theme="dark"] .auth-brand { color: var(--color-sage-green); }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+        .social-btn:hover {
+            background: var(--color-light-gray);
+            transform: translateY(-2px);
+        }
+        [data-theme="dark"] .social-btn:hover { background: rgba(255,255,255,0.1); }
+        
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        .auth-divider::before, .auth-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .auth-divider:not(:empty)::before { margin-right: .25em; }
+        .auth-divider:not(:empty)::after { margin-left: .25em; }
+        
+        .floating-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        [dir="rtl"] .floating-controls {
+            right: auto; left: 20px;
+        }
+        
+        .floating-controls .icon-btn {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            backdrop-filter: blur(5px);
+        }
+        .floating-controls .icon-btn:hover {
+            background: rgba(255,255,255,0.4);
+        }
+    </style>
+</head>
+<body class="auth-body">
+
+    <!-- Floating Toggles -->
+    <div class="floating-controls">
+        <button id="themeToggle" class="icon-btn theme-toggle" title="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-fill"></i>
+        </button>
+        <button id="rtlToggle" class="icon-btn" title="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+        </button>
+    </div>
+
+    <!-- Signup Card -->
+    <div class="auth-card">
+        <div class="auth-brand">
+            <a href="index.html" class="text-decoration-none" style="color: inherit;">
+                <i class="bi bi-flower1"></i> GreenNest
+            </a>
+        </div>
+        
+        <h4 class="fw-bold mb-1 text-center">Create an Account</h4>
+        <p class="text-muted mb-4 text-center">Join our community of plant lovers.</p>
+        
+        <form>
+            <div class="row g-2 mb-2">
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control form-control-glass" id="fname" placeholder="First Name" required>
+                        <label for="fname">First Name</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control form-control-glass" id="lname" placeholder="Last Name" required>
+                        <label for="lname">Last Name</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-floating form-floating-custom mb-2">
+                <input type="email" class="form-control form-control-glass" id="email" placeholder="name@example.com" required>
+                <label for="email"><i class="bi bi-envelope me-2"></i>Email address</label>
+            </div>
+            
+            <div class="form-floating form-floating-custom mb-2 position-relative">
+                <input type="password" class="form-control form-control-glass pe-5" id="password" placeholder="Password" required>
+                <label for="password"><i class="bi bi-lock me-2"></i>Password</label>
+                <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y toggle-password me-2" tabindex="-1" style="z-index: 5; color: var(--color-text-muted);">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+            
+            <div class="form-floating form-floating-custom mb-3 position-relative">
+                <input type="password" class="form-control form-control-glass pe-5" id="confirmPassword" placeholder="Confirm Password" required>
+                <label for="confirmPassword"><i class="bi bi-lock-fill me-2"></i>Confirm Password</label>
+                <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y toggle-password me-2" tabindex="-1" style="z-index: 5; color: var(--color-text-muted);">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+            
+            <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                <label class="form-check-label text-muted small" for="terms">
+                    I agree to the <a href="#" class="text-terracotta text-decoration-none fw-bold">Terms & Conditions</a> and <a href="#" class="text-terracotta text-decoration-none fw-bold">Privacy Policy</a>
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-premium btn-primary-custom w-100 py-3 mb-3 fs-5">Create Account</button>
+        </form>
+        
+        <div class="auth-divider">OR CONTINUE WITH</div>
+        
+        <div class="row g-2">
+            <div class="col-md-4">
+                <button class="social-btn px-0 w-100" title="Google Login">
+                    <i class="bi bi-google text-danger fs-5 m-0"></i>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="social-btn px-0 w-100" title="Facebook Login">
+                    <i class="bi bi-facebook text-primary fs-5 m-0"></i>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="social-btn px-0 w-100" title="Apple Login">
+                    <i class="bi bi-apple fs-5 m-0"></i>
+                </button>
+            </div>
+        </div>
+        
+        <p class="text-center mt-4 text-muted small mb-0">
+            Already Have an Account? <a href="login.html" class="text-forest-green fw-bold text-decoration-none">Sign In</a>
+        </p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

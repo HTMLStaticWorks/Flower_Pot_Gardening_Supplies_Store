@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenNest | Home 2</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    
+    <style>
+        /* Home 2 Unique Styles */
+        .hero-2 {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-bg);
+            padding-top: 100px;
+        }
+        
+        .hero-2-img {
+            border-radius: 50% 50% 0 0;
+            height: 600px;
+            object-fit: cover;
+            width: 100%;
+            border: 8px solid var(--color-white);
+            box-shadow: var(--shadow-lg);
+        }
+        [data-theme="dark"] .hero-2-img {
+            border-color: var(--color-beige);
+        }
+        
+        .feature-box {
+            background: var(--color-white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all var(--transition-smooth);
+            border-bottom: 4px solid transparent;
+            height: 100%;
+        }
+        [data-theme="dark"] .feature-box {
+            background: var(--color-card-bg);
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--color-terracotta);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(138, 167, 137, 0.2);
+            color: var(--color-forest-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            transition: all var(--transition-fast);
+        }
+        [data-theme="dark"] .feature-icon {
+            color: var(--color-sage-green);
+        }
+        
+        .feature-box:hover .feature-icon {
+            background: var(--color-forest-green);
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+        
+        .blog-card-2 {
+            border-radius: 0 40px 0 40px;
+            overflow: hidden;
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .blog-card-2 {
+            background: var(--color-card-bg);
+        }
+        
+        .contact-cta-section {
+            background: linear-gradient(135deg, var(--color-forest-green), var(--color-charcoal));
+            color: var(--color-cream);
+            padding: 80px 0;
+            border-radius: 30px;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Shared) -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-flower1"></i> GreenNest
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu glass-panel">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gardening-guides.html">Guides</a></li>
+                        <li class="nav-item"><a class="nav-link" href="bulk-orders.html">Bulk Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <button id="themeToggle" class="icon-btn theme-toggle" title="Toggle Dark/Light Mode">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                        <button id="rtlToggle" class="icon-btn" title="Toggle RTL">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                        
+                        <a href="signup.html" class="btn-premium btn-primary-custom ms-2">Signup</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero Banner (Fade Right / Split Layout) -->
+        <section class="hero-2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                        <h1 class="display-3 fw-bold mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">Bring Nature Into Your Living Space</h1>
+                        <p class="lead mb-5" style="color: var(--color-text-muted);">Transform your home with our exclusive collection of vibrant indoor plants and elegant modern planters.</p>
+                        <div class="d-flex gap-3">
+                            <a href="shop.html" class="btn-premium btn-primary-custom px-5">Shop Now</a>
+                            <a href="about.html" class="btn-premium btn-outline-custom px-4"><i class="bi bi-play-circle me-2"></i> Our Story</a>
+                        </div>
+                        
+                        <div class="mt-5 d-flex align-items-center gap-4">
+                            <div class="d-flex -space-x-4">
+                                <img loading="lazy" src="https://loremflickr.com/100/100/portrait?lock=15" class="rounded-circle border border-2 border-white" width="50" height="50" style="margin-right: -15px; position: relative; z-index: 3;" alt="User">
+                                <img loading="lazy" src="https://loremflickr.com/100/100/portrait?lock=16" class="rounded-circle border border-2 border-white" width="50" height="50" style="margin-right: -15px; position: relative; z-index: 2;" alt="User">
+                                <img loading="lazy" src="https://loremflickr.com/100/100/portrait?lock=17" class="rounded-circle border border-2 border-white" width="50" height="50" style="position: relative; z-index: 1;" alt="User">
+                            </div>
+                            <div>
+                                <div class="fw-bold fs-5">10k+</div>
+                                <div class="small text-muted">Happy Customers</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1" data-aos="zoom-in" data-aos-duration="1200">
+                        <img src="https://loremflickr.com/800/1000/monstera,indoor?lock=18" alt="Monstera Plant" class="hero-2-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Indoor Plants Collection (Masonry-style Grid) -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Premium Indoor Plants</h2>
+                    <p>Low maintenance, high impact greenery for any room.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <a href="shop.html" class="d-block position-relative rounded-4 overflow-hidden h-100 hover-shine group">
+                            <img loading="lazy" src="https://loremflickr.com/1200/600/livingroom,plants?lock=19" alt="Large Plants" class="w-100 h-100 object-fit-cover" style="min-height: 400px; transition: transform 0.5s;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.9));">
+                                <h3 class="text-white mb-0">Large Floor Plants</h3>
+                                <p class="text-white-50 mb-0">Make a statement</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column gap-4">
+                        <div class="flex-grow-1" data-aos="fade-left" data-aos-delay="100">
+                            <a href="shop.html" class="d-block position-relative rounded-4 overflow-hidden h-100 hover-shine">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/succulents?lock=20" alt="Succulents" class="w-100 h-100 object-fit-cover" style="min-height: 250px;">
+                                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                                    <h4 class="text-white mb-0 fs-5">Succulents</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex-grow-1" data-aos="fade-left" data-aos-delay="200">
+                            <a href="shop.html" class="d-block position-relative rounded-4 overflow-hidden h-100 hover-shine">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/desk,plant?lock=21" alt="Desktop Plants" class="w-100 h-100 object-fit-cover" style="min-height: 250px;">
+                                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                                    <h4 class="text-white mb-0 fs-5">Desktop Plants</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Gardening Essentials (Carousel/Row) -->
+        <section>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-5" data-aos="fade-up">
+                    <h2 class="m-0" style="color: var(--color-forest-green); font-family: var(--font-secondary);">Gardening Essentials</h2>
+                    <a href="categories.html" class="btn-premium btn-outline-custom rounded-pill">Shop All Tools</a>
+                </div>
+                
+                <div class="row g-4 flex-nowrap overflow-auto pb-4" style="scroll-snap-type: x mandatory;">
+                    <!-- Card 1 -->
+                    <div class="col-10 col-md-4 col-lg-3" style="scroll-snap-align: start;" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="product-card">
+                            <div class="product-img-wrap">
+                                <img loading="lazy" src="https://loremflickr.com/500/500/pruning,shears?lock=22" alt="Essential Tools">
+                            </div>
+                            <div class="product-info text-center">
+                                <h3 class="product-title m-0">Professional Shears</h3>
+                                <div class="product-price mt-2">$24.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-10 col-md-4 col-lg-3" style="scroll-snap-align: start;" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="product-card">
+                            <div class="product-img-wrap">
+                                <img loading="lazy" src="https://loremflickr.com/500/500/watering,can?lock=23" alt="Watering">
+                            </div>
+                            <div class="product-info text-center">
+                                <h3 class="product-title m-0">Brass Watering Can</h3>
+                                <div class="product-price mt-2">$42.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-10 col-md-4 col-lg-3" style="scroll-snap-align: start;" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="product-card">
+                            <div class="product-img-wrap">
+                                <img loading="lazy" src="https://loremflickr.com/500/500/soil,bag?lock=24" alt="Organic Soil">
+                            </div>
+                            <div class="product-info text-center">
+                                <h3 class="product-title m-0">Organic Potting Mix</h3>
+                                <div class="product-price mt-2">$15.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-10 col-md-4 col-lg-3" style="scroll-snap-align: start;" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="product-card">
+                            <div class="product-img-wrap">
+                                <img loading="lazy" src="https://loremflickr.com/500/500/gardening,gloves?lock=25" alt="Gloves">
+                            </div>
+                            <div class="product-info text-center">
+                                <h3 class="product-title m-0">Leather Garden Gloves</h3>
+                                <div class="product-price mt-2">$29.99</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Why Choose Us -->
+        <section class="bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Why Shop With GreenNest</h2>
+                    <p>We are dedicated to providing the best products and support for your botanical journey.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="bi bi-truck"></i></div>
+                            <h4>Fast Delivery</h4>
+                            <p class="text-muted small mb-0">Careful, climate-controlled shipping ensures plants arrive healthy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                            <h4>Quality Guarantee</h4>
+                            <p class="text-muted small mb-0">30-day guarantee on all plants and 1-year warranty on accessories.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="bi bi-headset"></i></div>
+                            <h4>Expert Support</h4>
+                            <p class="text-muted small mb-0">Our horticulturalists are available 24/7 to answer your questions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-box">
+                            <div class="feature-icon"><i class="bi bi-tree"></i></div>
+                            <h4>Eco-Friendly</h4>
+                            <p class="text-muted small mb-0">Sustainable sourcing and biodegradable packaging used always.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Gardening Tips Preview (Reveal Animation) -->
+        <section>
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100" style="margin-bottom: 30px !important;" data-aos="fade-right">
+                    <div style="text-align: left;">
+                        <h2 style="margin-left: 0;">Latest From The Blog</h2>
+                        <p style="margin-left: 0;">Expert advice, care guides, and inspiration for your green space.</p>
+                    </div>
+                    <a href="blog.html" class="btn-premium btn-outline-custom">Read All Articles</a>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="blog-card-2 h-100">
+                            <img loading="lazy" src="https://loremflickr.com/800/500/watering,plants?lock=26" class="w-100" style="height: 250px; object-fit: cover;" alt="Blog">
+                            <div class="p-4">
+                                <div class="text-terracotta small fw-bold mb-2">PLANT CARE</div>
+                                <h3 class="fs-4 mb-3"><a href="#">The Ultimate Guide to Watering Indoor Plants</a></h3>
+                                <p class="text-muted mb-4">Learn the exact signs your plants give you when they are thirsty, and how to avoid overwatering...</p>
+                                <a href="#" class="fw-bold text-forest-green">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="blog-card-2 h-100">
+                            <img loading="lazy" src="https://loremflickr.com/800/500/balcony,garden?lock=27" class="w-100" style="height: 250px; object-fit: cover;" alt="Blog">
+                            <div class="p-4">
+                                <div class="text-terracotta small fw-bold mb-2">DIY GARDENING</div>
+                                <h3 class="fs-4 mb-3"><a href="#">How to Create a Balcony Garden Oasis</a></h3>
+                                <p class="text-muted mb-4">Transform your small outdoor space into a lush, relaxing retreat with these space-saving planting tips...</p>
+                                <a href="#" class="fw-bold text-forest-green">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Contact CTA -->
+        <div class="container">
+            <section class="contact-cta-section text-center" data-aos="zoom-in">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4 text-white" style="font-family: var(--font-secondary); font-size: 3rem;">Need Help Designing Your Space?</h2>
+                        <p class="lead mb-5 opacity-75">Our landscaping experts are ready to help you select the perfect plants and pots for your home or office.</p>
+                        <a href="contact.html" class="btn-premium bg-white text-dark fs-5 px-5 py-3 rounded-pill shadow-lg hover-shine">Book a Free Consultation</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (Shared) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand mb-4" href="index.html">
+                        <i class="bi bi-flower1"></i> GreenNest
+                    </a>
+                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern gardening essentials.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Product Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categories.html">Flower Pots</a></li>
+                        <li><a href="categories.html">Indoor Plants</a></li>
+                        <li><a href="categories.html">Gardening Tools</a></li>
+                        <li><a href="categories.html">Soil & Fertilizers</a></li>
+                        <li><a href="categories.html">Garden Decor</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="m-0">&copy; 2026 GreenNest Store. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
