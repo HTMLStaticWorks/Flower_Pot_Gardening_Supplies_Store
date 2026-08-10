@@ -68,7 +68,8 @@
   transition: background-color var(--transition-fast);
 }
 
-[data-theme="dark"] .bg-theme-light {
+[data-theme="dark"] .bg-theme-light,
+[data-theme="dark"] .bg-light {
   background-color: var(--color-bg) !important;
 }
 
