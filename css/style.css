@@ -96,6 +96,16 @@
   color: var(--color-text-muted, #A3A3A3) !important;
 }
 
+[data-theme="dark"] .newsletter-section,
+[data-theme="dark"] .newsletter-section h2,
+[data-theme="dark"] .newsletter-section p {
+  color: #F5F1E7 !important;
+}
+
+[data-theme="dark"] .newsletter-section h2::after {
+  background: #F5F1E7 !important;
+}
+
 [data-theme="dark"] .form-check-input {
   background-color: var(--color-bg);
   border-color: var(--color-border);
