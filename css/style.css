@@ -85,6 +85,14 @@
   color: var(--color-sage-green);
 }
 
+[data-theme="dark"] .table {
+  --bs-table-color: var(--color-white) !important;
+  --bs-table-bg: transparent !important;
+}
+[data-theme="dark"] .table .text-muted {
+  color: #adb5bd !important;
+}
+
 .stat-number {
   color: var(--color-olive);
 }
