@@ -16,14 +16,13 @@
         .auth-body {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
             background: linear-gradient(rgba(44, 94, 59, 0.6), rgba(44, 94, 59, 0.8)), url('https://loremflickr.com/1920/1080/greenery,leaves?lock=121') center/cover fixed;
-            padding: 40px 20px;
+            padding: 100px 20px 40px;
             position: relative;
         }
         
         .auth-card {
+            margin: auto;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -98,6 +97,7 @@
             right: 20px;
             display: flex;
             gap: 10px;
+            z-index: 10;
         }
         [dir="rtl"] .floating-controls {
             right: auto; left: 20px;
@@ -139,11 +139,11 @@
         <form>
             <div class="form-floating form-floating-custom mb-3">
                 <input type="email" class="form-control form-control-glass" id="email" placeholder="name@example.com" required>
-                <label for="email"><i class="bi bi-envelope me-2"></i>Email address</label>
+                <label for="email" class="d-flex align-items-center"><i class="bi bi-envelope me-2"></i>Email address</label>
             </div>
             <div class="form-floating form-floating-custom mb-3 position-relative">
                 <input type="password" class="form-control form-control-glass pe-5" id="password" placeholder="Password" required>
-                <label for="password"><i class="bi bi-lock me-2"></i>Password</label>
+                <label for="password" class="d-flex align-items-center"><i class="bi bi-lock me-2"></i>Password</label>
                 <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y toggle-password me-2" tabindex="-1" style="z-index: 5; color: var(--color-text-muted);">
                     <i class="bi bi-eye"></i>
                 </button>
@@ -153,31 +153,32 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="rememberMe">
                     <label class="form-check-label text-muted small" for="rememberMe">
+                    <label class="form-check-label text-muted small d-flex align-items-center" for="rememberMe">
                         Remember me
                     </label>
                 </div>
                 <a href="#" class="text-terracotta small fw-bold text-decoration-none">Forgot Password?</a>
             </div>
             
-            <button type="submit" class="btn-premium btn-primary-custom w-100 py-3 mb-4 fs-5">Sign In</button>
+            <button type="submit" class="btn-premium btn-primary-custom w-100 py-2 py-md-3 fs-6 fs-md-5 mb-3 text-nowrap">Sign In</button>
         </form>
         
         <div class="auth-divider">OR CONTINUE WITH</div>
         
         <div class="row g-2">
-            <div class="col-md-4">
+            <div class="col-4">
                 <button class="social-btn px-0 w-100" title="Google Login">
                     <i class="bi bi-google text-danger fs-5 m-0"></i>
                 </button>
             </div>
-            <div class="col-md-4">
+            <div class="col-4">
                 <button class="social-btn px-0 w-100" title="Facebook Login">
                     <i class="bi bi-facebook text-primary fs-5 m-0"></i>
                 </button>
             </div>
-            <div class="col-md-4">
+            <div class="col-4">
                 <button class="social-btn px-0 w-100" title="Apple Login">
-                    <i class="bi bi-apple fs-5 m-0"></i>
+                    <i class="bi bi-apple fs-5 m-0" style="color: var(--color-text);"></i>
                 </button>
             </div>
         </div>

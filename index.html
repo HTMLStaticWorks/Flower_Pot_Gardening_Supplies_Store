@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenNest | Premium Gardening Supplies Store</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="GreenNest is your premium destination for modern flower pots, indoor plants, and gardening supplies.">
-    
+    <meta name="description"
+        content="GreenNest is your premium destination for modern flower pots, indoor plants, and gardening supplies.">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rtl.css">
-    
+
     <style>
         /* Specific page styles can go here if needed */
         .hero-section {
@@ -30,44 +32,59 @@
             color: #fff;
             padding-top: 80px;
         }
-        
+
         .hero-content h1 {
             font-size: 4rem;
             color: #fff;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
-        
+
         .hero-content p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 30px;
             color: var(--color-cream);
         }
-        
+
         .collection-section {
             background: url('https://loremflickr.com/1920/600/leaf,texture?lock=2') center/cover fixed;
             position: relative;
         }
+
         .collection-section::before {
             content: '';
             position: absolute;
-            top:0; left:0; right:0; bottom:0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(255, 255, 255, 0.85);
         }
+
         [data-theme="dark"] .collection-section::before {
             background: rgba(26, 31, 28, 0.9);
         }
-        
+
         .newsletter-section {
             background: var(--color-olive);
             color: var(--color-cream);
         }
-        .newsletter-section h2 { color: var(--color-cream); }
-        .newsletter-section h2::after { background: var(--color-cream); }
-        .newsletter-section p { color: var(--color-beige); }
+
+        .newsletter-section h2 {
+            color: var(--color-cream);
+        }
+
+        .newsletter-section h2::after {
+            background: var(--color-cream);
+        }
+
+        .newsletter-section p {
+            color: var(--color-beige);
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -77,15 +94,17 @@
                 <a class="navbar-brand" href="index.html">
                     <i class="bi bi-flower1"></i> GreenNest
                 </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#mainNav">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                            <a class="nav-link active dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Home</a>
                             <ul class="dropdown-menu glass-panel">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
@@ -99,7 +118,7 @@
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
-                    
+
                     <div class="nav-actions">
                         <button id="themeToggle" class="icon-btn theme-toggle" title="Toggle Dark/Light Mode">
                             <i class="bi bi-moon-fill"></i>
@@ -107,7 +126,7 @@
                         <button id="rtlToggle" class="icon-btn" title="Toggle RTL">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
-                        
+
                         <a href="signup.html" class="btn-premium btn-primary-custom ms-2">Signup</a>
                     </div>
                 </div>
@@ -120,10 +139,13 @@
         <section class="hero-section">
             <div class="container hero-content" data-aos="zoom-in" data-aos-duration="1200">
                 <h1>Cultivate Your Premium Garden</h1>
-                <p>Discover our exclusive collection of modern flower pots, lush indoor plants, and luxury gardening essentials.</p>
-                <div class="d-flex gap-3 justify-content-center">
-                    <a href="shop.html" class="btn-premium btn-primary-custom">Explore Shop <i class="bi bi-arrow-right ms-2"></i></a>
-                    <a href="categories.html" class="btn-premium btn-outline-custom" style="color: #fff; border-color: #fff;">View Categories</a>
+                <p>Discover our exclusive collection of modern flower pots, lush indoor plants, and luxury gardening
+                    essentials.</p>
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <a href="shop.html" class="btn-premium btn-primary-custom">Explore Shop <i
+                            class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="categories.html" class="btn-premium btn-outline-custom"
+                        style="color: #fff; border-color: #fff;">View Categories</a>
                 </div>
             </div>
         </section>
@@ -138,32 +160,41 @@
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <a href="#" class="d-block hover-shine rounded-4 overflow-hidden shadow-sm position-relative">
-                            <img loading="lazy" src="https://loremflickr.com/600/600/ceramic,pot?lock=3" class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Ceramic Pots">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                            <img loading="lazy" src="https://loremflickr.com/600/600/ceramic,pot?lock=3"
+                                class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Ceramic Pots">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center"
+                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h4 class="m-0 font-primary fs-5 text-white">Ceramic Pots</h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <a href="#" class="d-block hover-shine rounded-4 overflow-hidden shadow-sm position-relative">
-                            <img loading="lazy" src="https://loremflickr.com/600/600/indoor,plant?lock=4" class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Indoor Plants">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                            <img loading="lazy" src="https://loremflickr.com/600/600/indoor,plant?lock=4"
+                                class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Indoor Plants">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center"
+                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h4 class="m-0 font-primary fs-5 text-white">Indoor Plants</h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <a href="#" class="d-block hover-shine rounded-4 overflow-hidden shadow-sm position-relative">
-                            <img loading="lazy" src="https://loremflickr.com/600/600/gardening,tools?lock=5" class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Garden Tools">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                            <img loading="lazy" src="https://loremflickr.com/600/600/gardening,tools?lock=5"
+                                class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Garden Tools">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center"
+                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h4 class="m-0 font-primary fs-5 text-white">Garden Tools</h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <a href="#" class="d-block hover-shine rounded-4 overflow-hidden shadow-sm position-relative">
-                            <img loading="lazy" src="https://loremflickr.com/600/600/soil,fertilizer?lock=6" class="img-fluid w-100" style="height: 300px; object-fit: cover;" alt="Soil & Fertilizers">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center" style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                            <img loading="lazy" src="https://images.pexels.com/photos/7944397/pexels-photo-7944397.jpeg"
+                                class="img-fluid w-100" style="height: 300px; object-fit: cover;"
+                                alt="Soil & Fertilizers">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white text-center"
+                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
                                 <h4 class="m-0 font-primary fs-5 text-white">Soil & Fertilizers</h4>
                             </div>
                         </a>
@@ -175,29 +206,33 @@
         <!-- Section 3: Featured Flower Pots (Fade Left) -->
         <section class="bg-light">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100" style="margin-bottom: 30px !important;" data-aos="fade-left">
-                    <div style="text-align: left;">
-                        <h2 style="margin-left: 0;">Featured Flower Pots</h2>
-                        <p style="margin-left: 0;">Our best-selling luxury planters for your modern home.</p>
+                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100"
+                    style="margin-bottom: 30px !important;" data-aos="fade-left">
+                    <div class="text-start">
+                        <h2 class="ms-0">Featured Flower Pots</h2>
+                        <p class="ms-0">Our best-selling luxury planters for your modern home.</p>
                     </div>
                     <a href="shop.html" class="btn-premium btn-outline-custom">View All</a>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4 justify-content-center">
                     <!-- Product 1 -->
                     <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="100">
                         <div class="product-card">
                             <span class="category-badge">Featured</span>
                             <a href="#" class="wishlist-btn"><i class="bi bi-heart"></i></a>
                             <div class="product-img-wrap">
-                                <img loading="lazy" src="https://loremflickr.com/600/600/modern,flowerpot?lock=7" alt="Product">
+                                <img loading="lazy" src="https://loremflickr.com/600/600/modern,flowerpot?lock=7"
+                                    alt="Product">
                                 <div class="quick-view-overlay">
                                     <button class="quick-view-btn">Quick View</button>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
                                 </div>
                                 <h3 class="product-title"><a href="#">Terracotta Minimalist Pot</a></h3>
                                 <div class="product-price">$45.00</div>
@@ -210,14 +245,17 @@
                             <span class="category-badge" style="background: var(--color-sage-green);">New</span>
                             <a href="#" class="wishlist-btn"><i class="bi bi-heart"></i></a>
                             <div class="product-img-wrap">
-                                <img loading="lazy" src="https://loremflickr.com/600/600/tall,planter?lock=8" alt="Product">
+                                <img loading="lazy" src="https://loremflickr.com/600/600/tall,planter?lock=8"
+                                    alt="Product">
                                 <div class="quick-view-overlay">
                                     <button class="quick-view-btn">Quick View</button>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
                                 </div>
                                 <h3 class="product-title"><a href="#">Matte Charcoal Planter</a></h3>
                                 <div class="product-price">$65.00</div>
@@ -230,17 +268,21 @@
                             <span class="category-badge">Sale</span>
                             <a href="#" class="wishlist-btn"><i class="bi bi-heart"></i></a>
                             <div class="product-img-wrap">
-                                <img loading="lazy" src="https://loremflickr.com/600/600/white,ceramic,pot?lock=9" alt="Product">
+                                <img loading="lazy" src="https://loremflickr.com/600/600/white,ceramic,pot?lock=9"
+                                    alt="Product">
                                 <div class="quick-view-overlay">
                                     <button class="quick-view-btn">Quick View</button>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star"></i>
                                 </div>
                                 <h3 class="product-title"><a href="#">Glazed White Ceramic</a></h3>
-                                <div class="product-price">$35.00 <span class="text-muted text-decoration-line-through fs-6">$50.00</span></div>
+                                <div class="product-price">$35.00 <span
+                                        class="text-muted text-decoration-line-through fs-6">$50.00</span></div>
                             </div>
                         </div>
                     </div>
@@ -250,14 +292,17 @@
                             <span class="category-badge">Featured</span>
                             <a href="#" class="wishlist-btn"><i class="bi bi-heart"></i></a>
                             <div class="product-img-wrap">
-                                <img loading="lazy" src="https://loremflickr.com/600/600/hanging,planter?lock=10" alt="Product">
+                                <img loading="lazy" src="https://loremflickr.com/600/600/hanging,planter?lock=10"
+                                    alt="Product">
                                 <div class="quick-view-overlay">
                                     <button class="quick-view-btn">Quick View</button>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
                                 </div>
                                 <h3 class="product-title"><a href="#">Woven Hanging Basket</a></h3>
                                 <div class="product-price">$28.00</div>
@@ -274,21 +319,30 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="zoom-out-right">
                         <div class="pe-lg-5">
-                            <span class="text-uppercase fw-bold mb-3 d-block" style="color: var(--color-terracotta); letter-spacing: 2px;">Spring Collection</span>
-                            <h2 class="display-4 fw-bold mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">Revitalize Your Outdoor Space</h2>
-                            <p class="mb-4 lead">Embrace the season with our new arrivals. From vibrant outdoor planters to premium soil mixes, we have everything you need for a blooming garden.</p>
+                            <span class="text-uppercase fw-bold mb-3 d-block"
+                                style="color: var(--color-terracotta); letter-spacing: 2px;">Spring Collection</span>
+                            <h2 class="display-4 fw-bold mb-4"
+                                style="color: var(--color-forest-green); font-family: var(--font-secondary);">Revitalize
+                                Your Outdoor Space</h2>
+                            <p class="mb-4 lead">Embrace the season with our new arrivals. From vibrant outdoor planters
+                                to premium soil mixes, we have everything you need for a blooming garden.</p>
                             <ul class="list-unstyled mb-5">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-olive);"></i> Premium weather-resistant materials</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-olive);"></i> Organic fertilizers and soils</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-olive);"></i> Expertly curated tool sets</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"
+                                        style="color: var(--color-olive);"></i> Premium weather-resistant materials</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"
+                                        style="color: var(--color-olive);"></i> Organic fertilizers and soils</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2"
+                                        style="color: var(--color-olive);"></i> Expertly curated tool sets</li>
                             </ul>
                             <a href="shop.html" class="btn-premium btn-primary-custom">Shop Collection</a>
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
                         <div class="position-relative">
-                            <img loading="lazy" src="https://loremflickr.com/800/800/spring,garden?lock=11" alt="Spring Garden" class="img-fluid rounded-4 shadow-lg card-lift">
-                            <div class="glass-panel position-absolute p-4 text-center" style="bottom: -30px; left: -30px; width: 250px;">
+                            <img loading="lazy" src="https://loremflickr.com/800/800/spring,garden?lock=11"
+                                alt="Spring Garden" class="img-fluid rounded-4 shadow-lg card-lift">
+                            <div class="glass-panel position-absolute p-4 text-center"
+                                style="bottom: -30px; left: -30px; width: 250px;">
                                 <h3 class="fs-4 text-forest-green m-0">30% OFF</h3>
                                 <p class="m-0 text-muted">All Spring Planters</p>
                             </div>
@@ -305,45 +359,63 @@
                     <h2>What Plant Lovers Say</h2>
                     <p>Don't just take our word for it. Here is what our community thinks about GreenNest.</p>
                 </div>
-                
+
                 <div class="row g-4">
                     <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
                         <div class="glass-panel p-4 h-100 position-relative">
-                            <i class="bi bi-quote position-absolute top-0 end-0 m-3" style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
+                            <i class="bi bi-quote position-absolute top-0 end-0 m-3"
+                                style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
                             <div class="d-flex align-items-center mb-4">
-                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,woman?lock=12" alt="Sarah J." class="rounded-circle me-3" width="60" height="60" style="object-fit: cover;">
+                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,woman?lock=12"
+                                    alt="Sarah J." class="rounded-circle me-3" width="60" height="60"
+                                    style="object-fit: cover;">
                                 <div>
                                     <h5 class="m-0">Sarah Jenkins</h5>
-                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                                 </div>
                             </div>
-                            <p class="mb-0 text-muted">"The quality of the ceramic pots is outstanding. They transformed my living room into a modern oasis. Packaging was perfect too!"</p>
+                            <p class="mb-0 text-muted">"The quality of the ceramic pots is outstanding. They transformed
+                                my living room into a modern oasis. Packaging was perfect too!"</p>
                         </div>
                     </div>
                     <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
                         <div class="glass-panel p-4 h-100 position-relative">
-                            <i class="bi bi-quote position-absolute top-0 end-0 m-3" style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
+                            <i class="bi bi-quote position-absolute top-0 end-0 m-3"
+                                style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
                             <div class="d-flex align-items-center mb-4">
-                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,man?lock=13" alt="Mike R." class="rounded-circle me-3" width="60" height="60" style="object-fit: cover;">
+                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,man?lock=13"
+                                    alt="Mike R." class="rounded-circle me-3" width="60" height="60"
+                                    style="object-fit: cover;">
                                 <div>
                                     <h5 class="m-0">Michael Rodriguez</h5>
-                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                                 </div>
                             </div>
-                            <p class="mb-0 text-muted">"GreenNest's organic soil completely saved my dying monstera. Their gardening tips blog is also a goldmine for beginners like me."</p>
+                            <p class="mb-0 text-muted">"GreenNest's organic soil completely saved my dying monstera.
+                                Their gardening tips blog is also a goldmine for beginners like me."</p>
                         </div>
                     </div>
                     <div class="col-lg-4" data-aos="fade-right" data-aos-delay="300">
                         <div class="glass-panel p-4 h-100 position-relative">
-                            <i class="bi bi-quote position-absolute top-0 end-0 m-3" style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
+                            <i class="bi bi-quote position-absolute top-0 end-0 m-3"
+                                style="font-size: 3rem; color: var(--color-beige); opacity: 0.5;"></i>
                             <div class="d-flex align-items-center mb-4">
-                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,girl?lock=14" alt="Emily T." class="rounded-circle me-3" width="60" height="60" style="object-fit: cover;">
+                                <img loading="lazy" src="https://loremflickr.com/150/150/portrait,girl?lock=14"
+                                    alt="Emily T." class="rounded-circle me-3" width="60" height="60"
+                                    style="object-fit: cover;">
                                 <div>
                                     <h5 class="m-0">Emily Thompson</h5>
-                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                                    <div class="product-rating fs-6"><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
                                 </div>
                             </div>
-                            <p class="mb-0 text-muted">"Love the minimalist design of their indoor planters. They look super expensive but the prices are actually very reasonable. Will buy again!"</p>
+                            <p class="mb-0 text-muted">"Love the minimalist design of their indoor planters. They look
+                                super expensive but the prices are actually very reasonable. Will buy again!"</p>
                         </div>
                     </div>
                 </div>
@@ -356,11 +428,15 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="mb-4">Join Our Green Community</h2>
-                        <p class="mb-5">Subscribe to our newsletter and get 15% off your first order, plus weekly plant care tips and exclusive offers.</p>
-                        
-                        <form class="d-flex gap-2 flex-column flex-md-row justify-content-center max-w-lg mx-auto" style="max-width: 600px;">
-                            <input type="email" class="form-control form-control-glass flex-grow-1" placeholder="Enter your email address" required style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
-                            <button type="submit" class="btn-premium" style="background: var(--color-terracotta); color: #fff;">Subscribe</button>
+                        <p class="mb-5">Subscribe to our newsletter and get 15% off your first order, plus weekly plant
+                            care tips and exclusive offers.</p>
+
+                        <form class="d-flex gap-2 flex-column flex-md-row justify-content-center max-w-lg mx-auto"
+                            style="max-width: 600px;">
+                            <input type="email" class="form-control form-control-glass flex-grow-1"
+                                placeholder="Enter your email address" required
+                                style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+                            <button type="submit" class="btn-premium btn-terracotta">Subscribe</button>
                         </form>
                     </div>
                 </div>
@@ -376,7 +452,8 @@
                     <a class="navbar-brand mb-4" href="index.html">
                         <i class="bi bi-flower1"></i> GreenNest
                     </a>
-                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern gardening essentials.</p>
+                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern
+                        gardening essentials.</p>
                     <div class="social-icons">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-instagram"></i></a>
@@ -384,7 +461,7 @@
                         <a href="#"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-6">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
@@ -395,7 +472,7 @@
                         <li><a href="login.html">My Account</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="footer-title">Product Categories</h4>
                     <ul class="footer-links">
@@ -406,24 +483,30 @@
                         <li><a href="categories.html">Garden Decor</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="footer-title">Contact Info</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001
+                        </li>
+                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM
+                        </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p class="m-0">&copy; 2026 GreenNest Store. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
 
     <!-- Bootstrap JS -->
@@ -433,4 +516,5 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
+
 </html>

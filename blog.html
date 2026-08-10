@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | GreenNest</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rtl.css">
-    
+
     <style>
         .blog-hero {
             padding: 160px 0 80px;
-            background: var(--color-bg);
+            background: linear-gradient(to bottom, var(--color-bg), var(--color-white));
             text-align: center;
         }
-        
+
         .blog-card {
             background: var(--color-white);
             border-radius: 20px;
@@ -31,31 +32,34 @@
             display: flex;
             flex-direction: column;
         }
-        [data-theme="dark"] .blog-card { background: var(--color-card-bg); }
-        
+
+        [data-theme="dark"] .blog-card {
+            background: var(--color-card-bg);
+        }
+
         .blog-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-md);
             border-color: var(--color-forest-green);
         }
-        
+
         .blog-img-wrap {
             position: relative;
             height: 250px;
             overflow: hidden;
         }
-        
+
         .blog-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
-        
+
         .blog-card:hover .blog-img {
             transform: scale(1.1);
         }
-        
+
         .blog-badge {
             position: absolute;
             top: 20px;
@@ -68,14 +72,14 @@
             font-weight: bold;
             z-index: 2;
         }
-        
+
         .blog-content {
             padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .blog-meta {
             display: flex;
             gap: 15px;
@@ -83,7 +87,7 @@
             font-size: 0.9rem;
             margin-bottom: 15px;
         }
-        
+
         .blog-title {
             font-size: 1.4rem;
             font-family: var(--font-primary);
@@ -92,14 +96,26 @@
             color: var(--color-forest-green);
             line-height: 1.4;
         }
-        [data-theme="dark"] .blog-title { color: var(--color-sage-green); }
-        
+
+        [data-theme="dark"] .blog-title {
+            color: var(--color-sage-green);
+        }
+
+        .blog-featured-title {
+            color: var(--color-forest-green);
+            font-family: var(--font-secondary);
+        }
+
+        [data-theme="dark"] .blog-featured-title {
+            color: var(--color-sage-green);
+        }
+
         .blog-excerpt {
             color: var(--color-text-muted);
             margin-bottom: 20px;
             flex-grow: 1;
         }
-        
+
         .blog-link {
             font-weight: 600;
             color: var(--color-terracotta);
@@ -109,17 +125,32 @@
             display: inline-flex;
             align-items: center;
         }
-        .blog-link i { margin-left: 8px; transition: transform 0.3s; }
-        .blog-link:hover i { transform: translateX(5px); }
-        [dir="rtl"] .blog-link i { margin-left: 0; margin-right: 8px; }
-        [dir="rtl"] .blog-link:hover i { transform: translateX(-5px); }
-        
+
+        .blog-link i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .blog-link:hover i {
+            transform: translateX(5px);
+        }
+
+        [dir="rtl"] .blog-link i {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+
+        [dir="rtl"] .blog-link:hover i {
+            transform: translateX(-5px);
+        }
+
         .newsletter-section {
             background: var(--color-forest-green);
             color: var(--color-cream);
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header (Shared) -->
@@ -129,15 +160,16 @@
                 <a class="navbar-brand" href="index.html">
                     <i class="bi bi-flower1"></i> GreenNest
                 </a>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Home</a>
                             <ul class="dropdown-menu glass-panel">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
@@ -151,7 +183,7 @@
                         <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
-                    
+
                     <div class="nav-actions">
                         <button id="themeToggle" class="icon-btn theme-toggle" title="Toggle Dark/Light Mode">
                             <i class="bi bi-moon-fill"></i>
@@ -159,7 +191,7 @@
                         <button id="rtlToggle" class="icon-btn" title="Toggle RTL">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
-                        
+
                         <a href="signup.html" class="btn-premium btn-primary-custom ms-2">Signup</a>
                     </div>
                 </div>
@@ -171,10 +203,13 @@
         <!-- Section 1: Hero -->
         <section class="blog-hero" data-aos="fade-down">
             <div class="container">
-                <h1 class="display-3 fw-bold mb-4" style="font-family: var(--font-secondary); color: var(--color-forest-green);">The Green Journal</h1>
-                <p class="lead text-muted max-w-lg mx-auto mb-5">Stories, tips, and inspiration from our horticultural experts and community of plant lovers.</p>
+                <h1 class="display-3 fw-bold mb-4"
+                    style="font-family: var(--font-secondary); color: var(--color-forest-green);">The Green Journal</h1>
+                <p class="lead text-muted max-w-lg mx-auto mb-5">Stories, tips, and inspiration from our horticultural
+                    experts and community of plant lovers.</p>
                 <div class="d-flex justify-content-center gap-2 flex-wrap">
-                    <a href="#" class="btn btn-outline-secondary rounded-pill px-4 active" style="border-color: var(--color-forest-green); color: var(--color-forest-green);">All</a>
+                    <a href="#" class="btn btn-outline-secondary rounded-pill px-4 active"
+                        style="border-color: var(--color-forest-green); color: var(--color-forest-green);">All</a>
                     <a href="#" class="btn btn-outline-secondary rounded-pill px-4">Plant Care</a>
                     <a href="#" class="btn btn-outline-secondary rounded-pill px-4">DIY Gardening</a>
                     <a href="#" class="btn btn-outline-secondary rounded-pill px-4">Interior Design</a>
@@ -183,20 +218,24 @@
         </section>
 
         <!-- Section 2: Latest Articles (Featured + Grid) -->
-        <section class="py-5 bg-light">
+        <section class="py-5 bg-theme-light">
             <div class="container">
                 <div class="section-title text-start mb-5" data-aos="fade-right">
                     <h2 class="m-0">Latest Articles</h2>
                 </div>
-                
+
                 <div class="row g-4">
                     <!-- Featured Large Post -->
                     <div class="col-lg-12" data-aos="zoom-in" data-aos-duration="1000">
-                        <div class="card border-0 rounded-4 overflow-hidden shadow-sm" style="background: var(--color-bg);">
+                        <div class="card border-0 rounded-4 overflow-hidden shadow-sm"
+                            style="background: var(--color-bg);">
                             <div class="row g-0">
                                 <div class="col-lg-6 position-relative overflow-hidden group hover-shine">
                                     <span class="blog-badge">Featured</span>
-                                    <img loading="lazy" src="https://loremflickr.com/1000/800/livingroom,plants,modern?lock=101" class="img-fluid h-100 w-100 object-fit-cover" alt="Featured Post" style="min-height: 400px; transition: transform 0.8s;">
+                                    <img loading="lazy"
+                                        src="https://images.pexels.com/photos/6908367/pexels-photo-6908367.jpeg"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Featured Post"
+                                        style="min-height: 400px; transition: transform 0.8s;">
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center">
                                     <div class="card-body p-5">
@@ -204,8 +243,11 @@
                                             <span><i class="bi bi-calendar3 me-2"></i> Oct 24, 2025</span>
                                             <span><i class="bi bi-person me-2"></i> Elena Rostova</span>
                                         </div>
-                                        <h3 class="display-6 fw-bold mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">How to Style Large Indoor Plants in Minimalist Spaces</h3>
-                                        <p class="lead text-muted mb-4">Discover the art of using bold, statement plants to add life and texture to minimalist interiors without creating clutter.</p>
+                                        <h3 class="display-6 fw-bold mb-4 blog-featured-title">
+                                            How to Style Large Indoor Plants in Minimalist Spaces</h3>
+                                        <p class="lead text-muted mb-4">Discover the art of using bold, statement plants
+                                            to add life and texture to minimalist interiors without creating clutter.
+                                        </p>
                                         <a href="#" class="btn-premium btn-outline-custom">Read Article</a>
                                     </div>
                                 </div>
@@ -219,61 +261,70 @@
         <!-- Section 3: Plant Care -->
         <section class="py-5">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100" style="margin-bottom: 30px !important;" data-aos="fade-up">
-                    <div style="text-align: left;">
-                        <h2 style="margin-left: 0;">Plant Care</h2>
-                        <p style="margin-left: 0;">Master the art of keeping your plants thriving.</p>
+                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100"
+                    style="margin-bottom: 30px !important;" data-aos="fade-up">
+                    <div class="text-start">
+                        <h2 class="ms-0">Plant Care</h2>
+                        <p class="ms-0">Master the art of keeping your plants thriving.</p>
                     </div>
-                    <a href="#" class="btn btn-link text-forest-green fw-bold text-decoration-none d-none d-md-block">View All <i class="bi bi-arrow-right"></i></a>
+                    <a href="#"
+                        class="btn btn-link text-forest-green fw-bold text-decoration-none d-none d-md-block">View All
+                        <i class="bi bi-arrow-right"></i></a>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-sage-green);">Plant Care</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/monstera,leaf?lock=102" alt="Blog Post" class="blog-img">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/monstera,leaf?lock=102"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Oct 18, 2025</span>
                                 </div>
                                 <h4 class="blog-title">Why Are My Monstera Leaves Turning Yellow?</h4>
-                                <p class="blog-excerpt">Yellowing leaves are the most common cry for help from your Monstera. Here are the top 5 reasons and how to fix them instantly.</p>
+                                <p class="blog-excerpt">Yellowing leaves are the most common cry for help from your
+                                    Monstera. Here are the top 5 reasons and how to fix them instantly.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-sage-green);">Plant Care</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/cactus,pot?lock=103" alt="Blog Post" class="blog-img">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/cactus,pot?lock=103"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Oct 12, 2025</span>
                                 </div>
                                 <h4 class="blog-title">The Secret to Blooming Cacti Indoors</h4>
-                                <p class="blog-excerpt">Getting a cactus to bloom indoors can seem impossible. Learn the temperature trick that forces beautiful desert flowers every spring.</p>
+                                <p class="blog-excerpt">Getting a cactus to bloom indoors can seem impossible. Learn the
+                                    temperature trick that forces beautiful desert flowers every spring.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-sage-green);">Plant Care</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/humidifier,plant?lock=104" alt="Blog Post" class="blog-img">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/humidifier,plant?lock=104"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Oct 05, 2025</span>
                                 </div>
                                 <h4 class="blog-title">Misting vs. Humidifiers: What Actually Works?</h4>
-                                <p class="blog-excerpt">We settle the debate on raising ambient humidity for your tropical plants. Spoiler: that spray bottle isn't doing as much as you think.</p>
+                                <p class="blog-excerpt">We settle the debate on raising ambient humidity for your
+                                    tropical plants. Spoiler: that spray bottle isn't doing as much as you think.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
@@ -283,63 +334,74 @@
         </section>
 
         <!-- Section 4: DIY Gardening -->
-        <section class="py-5 bg-light">
+        <section class="py-5 bg-theme-light">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100" style="margin-bottom: 30px !important;" data-aos="fade-left">
-                    <div style="text-align: left;">
-                        <h2 style="margin-left: 0;">DIY Gardening</h2>
-                        <p style="margin-left: 0;">Get your hands dirty with our creative projects.</p>
+                <div class="d-flex justify-content-between align-items-end mb-5 section-title text-start w-100"
+                    style="margin-bottom: 30px !important;" data-aos="fade-left">
+                    <div class="text-start">
+                        <h2 class="ms-0">DIY Gardening</h2>
+                        <p class="ms-0">Get your hands dirty with our creative projects.</p>
                     </div>
-                    <a href="#" class="btn btn-link text-forest-green fw-bold text-decoration-none d-none d-md-block">View All <i class="bi bi-arrow-right"></i></a>
+                    <a href="#"
+                        class="btn btn-link text-forest-green fw-bold text-decoration-none d-none d-md-block">View All
+                        <i class="bi bi-arrow-right"></i></a>
                 </div>
-                
-                <div class="row g-4">
+
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-olive);">DIY</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/terrarium?lock=105" alt="Blog Post" class="blog-img">
+                                <img loading="lazy"
+                                    src="https://images.pexels.com/photos/4752023/pexels-photo-4752023.jpeg"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Sep 28, 2025</span>
                                 </div>
                                 <h4 class="blog-title">Build a Self-Sustaining Terrarium in 30 Minutes</h4>
-                                <p class="blog-excerpt">A step-by-step guide to creating a miniature ecosystem in a glass jar that requires almost zero maintenance.</p>
+                                <p class="blog-excerpt">A step-by-step guide to creating a miniature ecosystem in a
+                                    glass jar that requires almost zero maintenance.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-olive);">DIY</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/compost?lock=106" alt="Blog Post" class="blog-img">
+                                <img loading="lazy" src="https://loremflickr.com/600/400/compost?lock=106"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Sep 15, 2025</span>
                                 </div>
                                 <h4 class="blog-title">Apartment Composting: No Smell, No Mess</h4>
-                                <p class="blog-excerpt">Turn your kitchen scraps into liquid gold for your houseplants using an indoor bokashi bin or worm composter.</p>
+                                <p class="blog-excerpt">Turn your kitchen scraps into liquid gold for your houseplants
+                                    using an indoor bokashi bin or worm composter.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
                         <div class="blog-card">
                             <div class="blog-img-wrap">
                                 <span class="blog-badge" style="background: var(--color-olive);">DIY</span>
-                                <img loading="lazy" src="https://loremflickr.com/600/400/propagation?lock=107" alt="Blog Post" class="blog-img">
+                                <img loading="lazy"
+                                    src="https://images.pexels.com/photos/9709381/pexels-photo-9709381.jpeg"
+                                    alt="Blog Post" class="blog-img">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span>Sep 02, 2025</span>
                                 </div>
                                 <h4 class="blog-title">A Beginner's Guide to Water Propagation</h4>
-                                <p class="blog-excerpt">Multiply your plant collection for free! Learn how to properly take cuttings and root them in water successfully.</p>
+                                <p class="blog-excerpt">Multiply your plant collection for free! Learn how to properly
+                                    take cuttings and root them in water successfully.</p>
                                 <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
@@ -354,11 +416,16 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="mb-4 text-white">Never Miss an Update</h2>
-                        <p class="mb-5">Join 25,000+ subscribers receiving our weekly newsletter packed with expert plant care advice, new product drops, and exclusive discounts.</p>
-                        
-                        <form class="d-flex gap-2 flex-column flex-md-row justify-content-center max-w-lg mx-auto" style="max-width: 600px;">
-                            <input type="email" class="form-control form-control-glass flex-grow-1" placeholder="Enter your email address" required style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
-                            <button type="submit" class="btn-premium" style="background: var(--color-terracotta); color: #fff; min-width: 150px;">Subscribe <i class="bi bi-envelope-paper ms-2"></i></button>
+                        <p class="mb-5">Join 25,000+ subscribers receiving our weekly newsletter packed with expert
+                            plant care advice, new product drops, and exclusive discounts.</p>
+
+                        <form class="d-flex gap-2 flex-column flex-md-row justify-content-center max-w-lg mx-auto"
+                            style="max-width: 600px;">
+                            <input type="email" class="form-control form-control-glass flex-grow-1"
+                                placeholder="Enter your email address" required
+                                style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+                            <button type="submit" class="btn-premium btn-terracotta" style="min-width: 150px;">Subscribe
+                                <i class="bi bi-envelope-paper ms-2"></i></button>
                         </form>
                     </div>
                 </div>
@@ -374,7 +441,8 @@
                     <a class="navbar-brand mb-4" href="index.html">
                         <i class="bi bi-flower1"></i> GreenNest
                     </a>
-                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern gardening essentials.</p>
+                    <p class="mb-4">Elevating your botanical space with premium quality pots, plants, and modern
+                        gardening essentials.</p>
                     <div class="social-icons">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-instagram"></i></a>
@@ -382,7 +450,7 @@
                         <a href="#"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-6">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
@@ -393,7 +461,7 @@
                         <li><a href="login.html">My Account</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="footer-title">Product Categories</h4>
                     <ul class="footer-links">
@@ -404,28 +472,35 @@
                         <li><a href="categories.html">Garden Decor</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="footer-title">Contact Info</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
-                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta" style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> 123 Botanical Ave, Green Valley, NY 10001
+                        </li>
+                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> hello@greennest.com</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> +1 (555) 123-4567</li>
+                        <li class="mb-3 d-flex"><i class="bi bi-clock-fill me-3 mt-1 text-terracotta"
+                                style="color: var(--color-terracotta);"></i> Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM
+                        </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p class="m-0">&copy; 2026 GreenNest Store. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <button id="backToTop" class="back-to-top"><i class="bi bi-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

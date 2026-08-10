@@ -74,11 +74,14 @@
             padding: 30px;
             text-align: center;
             transition: all var(--transition-fast);
+            display: flex;
+            flex-direction: column;
         }
         .review-card:hover {
             box-shadow: var(--shadow-md);
             transform: translateY(-5px);
         }
+
     </style>
 </head>
 <body>
@@ -131,9 +134,9 @@
     <main>
         <!-- Section 1: Hero -->
         <section class="page-hero" data-aos="fade-in">
-            <div class="container">
-                <h1 class="display-4 fw-bold mb-3" style="font-family: var(--font-secondary);">Our Story</h1>
-                <p class="lead max-w-lg mx-auto" style="max-width: 600px; color: var(--color-cream);">Rooted in passion, growing with purpose. Discover the journey behind GreenNest.</p>
+            <div class="container text-white">
+                <h1 class="display-4 fw-bold mb-3 text-white" style="font-family: var(--font-secondary);">Our Story</h1>
+                <p class="lead max-w-lg mx-auto text-white" style="max-width: 600px;">Rooted in passion, growing with purpose. Discover the journey behind GreenNest.</p>
             </div>
         </section>
 
@@ -146,20 +149,20 @@
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
                         <span class="text-uppercase fw-bold mb-3 d-block" style="color: var(--color-terracotta); letter-spacing: 2px;">Since 2018</span>
-                        <h2 class="display-5 mb-4" style="color: var(--color-forest-green); font-family: var(--font-secondary);">From a Small Seed to a Thriving Community</h2>
+                        <h2 class="display-5 mb-4 story-heading">From a Small Seed to a Thriving Community</h2>
                         <p class="lead text-muted mb-4">GreenNest started in a small backyard greenhouse with a simple mission: to make premium quality gardening accessible to urban dwellers.</p>
                         <p class="text-muted mb-4">We realized that finding stylish, modern planters that also provided proper drainage and care for plants was incredibly difficult. What began as a personal project to design the perfect ceramic pot quickly blossomed into a full-scale operation.</p>
                         <div class="d-flex gap-4 mt-5">
                             <div>
-                                <h3 class="fs-1 fw-bold" style="color: var(--color-olive);">50k+</h3>
+                                <h3 class="fs-1 fw-bold stat-number">50k+</h3>
                                 <p class="text-muted">Plants Delivered</p>
                             </div>
                             <div>
-                                <h3 class="fs-1 fw-bold" style="color: var(--color-olive);">12+</h3>
+                                <h3 class="fs-1 fw-bold stat-number">12+</h3>
                                 <p class="text-muted">Awards Won</p>
                             </div>
                             <div>
-                                <h3 class="fs-1 fw-bold" style="color: var(--color-olive);">100%</h3>
+                                <h3 class="fs-1 fw-bold stat-number">100%</h3>
                                 <p class="text-muted">Organic Guarantee</p>
                             </div>
                         </div>
@@ -169,7 +172,7 @@
         </section>
 
         <!-- Section 3: Mission & Vision -->
-        <section class="bg-light py-5">
+        <section class="bg-theme-light py-5">
             <div class="container">
                 <div class="row g-4 justify-content-center">
                     <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="100">
@@ -229,7 +232,7 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="team-member">
                             <div class="team-img-wrap">
-                                <img loading="lazy" src="https://loremflickr.com/400/400/portrait,man?lock=36" alt="Customer Success">
+                                <img loading="lazy" src="https://loremflickr.com/400/400/portrait,man?lock=42" alt="Customer Success">
                             </div>
                             <h4>Marcus Johnson</h4>
                             <p class="text-terracotta">Customer Success</p>
@@ -240,32 +243,32 @@
         </section>
 
         <!-- Section 5: Customer Reviews (Carousel style layout) -->
-        <section class="bg-light py-5 mb-5">
+        <section class="bg-theme-light py-5 mb-5">
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-down">
                     <h2 class="display-6 fw-bold" style="color: var(--color-forest-green); font-family: var(--font-secondary);">Loved by 10,000+ Plant Parents</h2>
                 </div>
                 
-                <div class="row g-4">
-                    <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-xl-4" data-aos="flip-left" data-aos-delay="100">
                         <div class="review-card h-100">
                             <div class="product-rating mb-3 fs-5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             <p class="fst-italic text-muted mb-4">"The customer service is unmatched. When my Alocasia arrived slightly droopy due to extreme heat, they guided me step-by-step on how to revive it. It's now thriving!"</p>
-                            <h6 class="fw-bold m-0">- Jessica W.</h6>
+                            <h6 class="fw-bold m-0 mt-auto">- Jessica W.</h6>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="col-md-6 col-xl-4" data-aos="flip-left" data-aos-delay="200">
                         <div class="review-card h-100">
                             <div class="product-rating mb-3 fs-5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             <p class="fst-italic text-muted mb-4">"I've bought pots from many luxury brands, but GreenNest's proprietary drainage system inside their ceramic pots is a game changer for root health."</p>
-                            <h6 class="fw-bold m-0">- Thomas B.</h6>
+                            <h6 class="fw-bold m-0 mt-auto">- Thomas B.</h6>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="col-md-6 col-xl-4" data-aos="flip-left" data-aos-delay="300">
                         <div class="review-card h-100">
                             <div class="product-rating mb-3 fs-5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             <p class="fst-italic text-muted mb-4">"Their organic potting soil is pure magic. I repotted all my succulents and they have doubled in size in just three months. Highly recommend!"</p>
-                            <h6 class="fw-bold m-0">- Amanda K.</h6>
+                            <h6 class="fw-bold m-0 mt-auto">- Amanda K.</h6>
                         </div>
                     </div>
                 </div>
