@@ -631,7 +631,11 @@ html:not([data-theme="dark"]) footer .form-control-glass {
   font-family: var(--font-secondary);
   font-size: 1.5rem;
   margin-bottom: 25px;
-  color: var(--color-text);
+  color: var(--color-forest-green);
+}
+
+[data-theme="dark"] .footer-title {
+  color: var(--color-sage-green);
 }
 
 .footer-links li {
@@ -639,16 +643,20 @@ html:not([data-theme="dark"]) footer .form-control-glass {
 }
 
 .footer-links a {
-  color: var(--color-text-muted);
-  opacity: 0.8;
+  color: var(--color-charcoal);
+  opacity: 1;
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .footer-links a {
+  color: #C8CFC9;
 }
 
 .footer-links a:hover {
-  opacity: 1;
   color: var(--color-terracotta);
   transform: translateX(5px);
 }
