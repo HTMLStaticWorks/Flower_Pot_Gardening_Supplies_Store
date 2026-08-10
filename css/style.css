@@ -592,6 +592,22 @@ section {
   color: var(--color-text);
 }
 
+html:not([data-theme="dark"]) .form-control-glass {
+  background: rgba(44, 94, 59, 0.05);
+  border: 1px solid rgba(44, 94, 59, 0.2);
+}
+
+html:not([data-theme="dark"]) .form-control-glass:focus {
+  background: rgba(44, 94, 59, 0.1);
+  border-color: var(--color-forest-green);
+}
+
+html:not([data-theme="dark"]) footer .form-control-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
 .form-floating-custom label {
   color: var(--color-text-muted);
   padding: 15px 20px;
