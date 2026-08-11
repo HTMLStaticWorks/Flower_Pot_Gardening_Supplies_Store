@@ -510,6 +510,16 @@ section {
   color: #fff;
 }
 
+[data-theme="dark"] .wishlist-btn {
+  background: rgba(34, 40, 36, 0.9); /* Dark background for button */
+  color: var(--color-text); /* Light icon */
+}
+
+[data-theme="dark"] .wishlist-btn:hover {
+  background: var(--color-terracotta);
+  color: #fff;
+}
+
 .quick-view-overlay {
   position: absolute;
   bottom: -50px;
@@ -577,7 +587,7 @@ section {
 
 /* Forms - Glassmorphism */
 .form-control-glass {
-  background: var(--glass-bg);
+  background-color: var(--glass-bg);
   border: 1px solid var(--glass-border);
   color: var(--color-text);
   border-radius: 12px;
@@ -586,24 +596,24 @@ section {
 }
 
 .form-control-glass:focus {
-  background: var(--color-white);
+  background-color: var(--color-white);
   border-color: var(--color-forest-green);
   box-shadow: 0 0 0 4px rgba(44, 94, 59, 0.1);
   color: var(--color-text);
 }
 
 html:not([data-theme="dark"]) .form-control-glass {
-  background: rgba(44, 94, 59, 0.05);
+  background-color: rgba(44, 94, 59, 0.05);
   border: 1px solid rgba(44, 94, 59, 0.2);
 }
 
 html:not([data-theme="dark"]) .form-control-glass:focus {
-  background: rgba(44, 94, 59, 0.1);
+  background-color: rgba(44, 94, 59, 0.1);
   border-color: var(--color-forest-green);
 }
 
 html:not([data-theme="dark"]) footer .form-control-glass {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
 }
@@ -771,7 +781,7 @@ html:not([data-theme="dark"]) footer .form-control-glass {
 }
 
 /* Responsive Utilities */
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .navbar-collapse {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
@@ -799,4 +809,33 @@ html:not([data-theme="dark"]) footer .form-control-glass {
   .section-title h2 {
     font-size: 2rem;
   }
+}
+
+/* View All Link Hover Effect */
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition-fast) !important;
+}
+
+.view-all-btn i {
+  transition: transform var(--transition-fast) !important;
+}
+
+.view-all-btn:hover {
+  color: var(--color-terracotta) !important;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(5px) !important;
+}
+
+/* Accordion Icon in Dark Mode */
+[data-theme="dark"] .accordion-button::after {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Select Dropdown Icon in Dark Mode */
+[data-theme="dark"] .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
